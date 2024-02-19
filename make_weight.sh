@@ -3,12 +3,12 @@
 for name in SUSYGluGluToHToAA_AToBB_AToTauTau_M-45 SUSYVBFHToAA_AToBB_AToTauTau_M-45; do
 cat > temp.C << EOF
 {
-TFile *g1 = TFile::Open("${name}.root");
-TFile *g2 = TFile::Open("PileupHistogram-goldenJSON-13tev-2018-69200ub-99bins.root");
-TFile *g3 = TFile::Open("PileupHistogram-goldenJSON-13tev-2018-66000ub-99bins.root");
-TFile *g4 = TFile::Open("PileupHistogram-goldenJSON-13tev-2018-72400ub-99bins.root");
+TFile *g1 = TFile::Open("nTrueInt_${name}.root");
+TFile *g2 = TFile::Open("commonFiles/PileupHistogram-goldenJSON-13tev-2018-69200ub-99bins.root");
+TFile *g3 = TFile::Open("commonFiles/PileupHistogram-goldenJSON-13tev-2018-66000ub-99bins.root");
+TFile *g4 = TFile::Open("commonFiles/PileupHistogram-goldenJSON-13tev-2018-72400ub-99bins.root");
 
-TH1D *h1 = (TH1D*)g1->Get("demo/n_TrueInt");
+TH1D *h1 = (TH1D*)g1->Get("n_TrueInt");
 TH1D *h2 = (TH1D*)g2->Get("pileup");
 TH1D *h3 = (TH1D*)g3->Get("pileup");
 TH1D *h4 = (TH1D*)g4->Get("pileup");
