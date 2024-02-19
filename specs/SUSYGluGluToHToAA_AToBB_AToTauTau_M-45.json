@@ -1,0 +1,15 @@
+{
+    "samples": {
+       "SUSYGluGluToHToAA_AToBB_AToTauTau_M-45": {
+          "trees": ["Events"],
+          "files": ["root://cms-xrd-global.cern.ch//store/mc/RunIIAutumn18NanoAODv7/SUSYGluGluToHToAA_AToBB_AToTauTau_M-45_FilterTauTauTrigger_TuneCP5_13TeV_madgraph_pythia8/NANOAODSIM/Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/260000/AE82D64D-12A8-B547-9A00-339213036849.root",
+                    "root://cms-xrd-global.cern.ch//store/mc/RunIIAutumn18NanoAODv7/SUSYGluGluToHToAA_AToBB_AToTauTau_M-45_FilterTauTauTrigger_TuneCP5_13TeV_madgraph_pythia8/NANOAODSIM/Nano02Apr2020_102X_upgrade2018_realistic_v21-v1/260000/F11DCAAA-A850-8243-8032-77A23237DA44.root "],
+          "metadata": {
+             "xsecs": 1.0,
+             "sumws": 1.0,
+             "sample_category": "mc",
+             "sample_name": "SUSYGluGluToHToAA_AToBB_AToTauTau_M-45"
+          }
+       }
+    }
+}
