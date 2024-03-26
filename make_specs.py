@@ -62,10 +62,13 @@ datasets_to_do = [
 # "2018,Cascade_ggH_MA2-80_MA1-30,/Cascade_ggH125ToA1A2To3A1_A1ToBBorTauTau_MA2-80_MA1-30_Filter_TuneCP5_13TeV_madgraph_pythia8/skkwan-NanoPost_Cascade_ggH125ToA1A2To3A1_A1ToBBorTauTau_MA2-80_MA1-30_RunIISummer20UL18NanoAODv9-1cea6da0d07fd8de4a53b465a6714af5/USER,1000",
 ]
 
+dataset_names = []
+
 for line in datasets_to_do:
     # https://stackoverflow.com/questions/4071396/how-to-split-by-comma-and-strip-white-spaces-in-python
     cleaned = [x.strip() for x in line.split(",")]
     dataset_name = cleaned[1]
+    dataset_names.append(dataset_name)
     das_name = cleaned[2]
     # Query DAS to get file names 
     if das_name.endswith("/USER"):
@@ -87,3 +90,7 @@ for line in datasets_to_do:
     with open("specs/{}.json".format(dataset_name), "w") as fOut:
         fOut.write(out)
 print(out)
+
+print(">>> In the next step, do these datasets: \n")
+for n in dataset_names:
+    print(n)
