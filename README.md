@@ -6,15 +6,17 @@ n_TrueInt = fs->make<TH1D>("n_TrueInt", "n_TrueInt", 99, 0, 99); # and just fill
 
 ## Usage
 
-1. Make the files that have the TH1D's of the true pileup:
+1. Make a bunch of `.json`s, one for each dataset:
 ```bash
-# First add a .json file that lists the files in the dataset
+python3 make_specs.py
+```
+2. Make the files that have the TH1D's of the true pileup:
+```bash
 python3 get_pileup_distributions.py
 ```
-This makes files `nTrueInt_*.root` in the same directory.
+This makes files `nTrueInt_*.root` in the `outputFiles/` directory.
 
-2. Use the outputs of step 1 to make the weights.
-
+3. Use the outputs of step 1 to make the weights.
 ```bash
 bash make_weight.sh
 ```
