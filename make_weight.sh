@@ -1,9 +1,9 @@
 # for name in VBFHToTauTau DYJetsToLL_M-50 DYJetsToLL_M-50-ext1 DYJetsToLL_M-10to50 DY1JetsToLL DY2JetsToLL DY3JetsToLL DY4JetsToLL VVTo2L2Nu WZTo2Q2L WZTo3LNu ZZTo4L ZZTo2Q2L WJetsToLNu W1JetsToLNu W2JetsToLNu W3JetsToLNu W4JetsToLNu GluGluHToTauTau GluGluHToWWTo2L2Nu GluGluZH_HToWWTo2L2Nu GluGluZH_HToWW_ZTo2L HWplusJ_HToWW HWminusJ_HToWW HZJ_HToWW VBFHToWWTo2L2Nu WminusHToTauTau WplusHToTauTau ZHToTauTau ttHToNonbb ttHTobb TTTo2L2Nu TTToHadronic TTToSemiLeptonic ST_tW_antitop; do
 
-for name in SUSYGluGluToHToAA_AToBB_AToTauTau_M-45 SUSYVBFHToAA_AToBB_AToTauTau_M-45; do
+for name in SUSYGluGluToHToAA_AToBB_AToTauTau_M-12; do
 cat > temp.C << EOF
 {
-TFile *g1 = TFile::Open("nTrueInt_${name}.root");
+TFile *g1 = TFile::Open("outputFiles/nTrueInt_${name}.root");
 TFile *g2 = TFile::Open("commonFiles/PileupHistogram-goldenJSON-13tev-2018-69200ub-99bins.root");
 TFile *g3 = TFile::Open("commonFiles/PileupHistogram-goldenJSON-13tev-2018-66000ub-99bins.root");
 TFile *g4 = TFile::Open("commonFiles/PileupHistogram-goldenJSON-13tev-2018-72400ub-99bins.root");
@@ -34,7 +34,7 @@ for(int i = 1; i <= 100; i++){
   }
 }
 
-TFile* file = TFile::Open("weightFile_${name}.root","RECREATE");
+TFile* file = TFile::Open("outputFiles/weightFile_${name}.root","RECREATE");
 h1->Write();
 h2->Write();
 h3->Write();
