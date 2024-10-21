@@ -183,7 +183,7 @@ for line in signal_datasets_to_do_2017:
     if das_name.endswith("/USER"):
         command = 'dasgoclient --query="file dataset={} instance=prod/phys03 status=VALID" > logRun'.format(das_name)
     else:
-        command = 'dasgoclient --query="file dataset={} > logRun'.format(das_name)
+        command = 'dasgoclient --query="file dataset={}" > logRun'.format(das_name)
     os.system(command)
     filesToGet = ""
     with open("logRun", "r") as logFile:
